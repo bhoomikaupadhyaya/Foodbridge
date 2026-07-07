@@ -1,30 +1,66 @@
+import { useState } from "react";
 
-const Login = () => {
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message);
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+
+      alert("Login Successful!");
+
+      console.log(data);
+
+    } catch (err) {
+      console.error(err);
+      alert("Unable to connect to backend");
+    }
+  };
+
   return (
-    <div>
+    <div style={{ padding: 40 }}>
       <h1>FoodBridge Login</h1>
 
-      <form>
-        <div>
-          <label>Email</label>
-          <br />
-          <input
-            type="email"
-            placeholder="Enter your email"
-          />
-        </div>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         <br />
+        <br />
 
-        <div>
-          <label>Password</label>
-          <br />
-          <input
-            type="password"
-            placeholder="Enter your password"
-          />
-        </div>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
+        <br />
         <br />
 
         <button type="submit">
@@ -33,6 +69,6 @@ const Login = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Login;

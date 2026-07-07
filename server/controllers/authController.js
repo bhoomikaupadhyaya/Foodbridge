@@ -56,6 +56,8 @@ const registerUser = async (req, res) => {
 // Login User
 // ======================================
 const loginUser = async (req, res) => {
+  console.log("🚀 Login API Hit");
+
   try {
     const { email, password } = req.body;
 
@@ -72,6 +74,7 @@ const loginUser = async (req, res) => {
       });
     }
 
+    // rest of your code...
     // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
 
