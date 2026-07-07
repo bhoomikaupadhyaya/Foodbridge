@@ -5,17 +5,21 @@ const {
   addFood,
   getAllFood,
   getMyDonations,
+  updateFood,
 } = require("../controllers/foodController");
 
 const authMiddleware = require("../middleware/authMiddleware");
 
-// Add Food
+// Add Food Donation
 router.post("/add", authMiddleware, addFood);
 
-// Get All Food
+// Get All Food Donations
 router.get("/", authMiddleware, getAllFood);
 
-// Get My Donations
+// Get Logged-in User Donations
 router.get("/my", authMiddleware, getMyDonations);
+
+// Update Food Donation
+router.put("/:id", authMiddleware, updateFood);
 
 module.exports = router;
