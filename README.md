@@ -130,13 +130,13 @@ FoodBridge
 
 ## My Requests
 
-![My Requests](screenshots/my-requests.png)
+![My Requests](screenshots/myrequests.jpg)
 
 ---
 
 ## Restaurant Requests
 
-![Restaurant Requests](screenshots/restaurant-requests.png)
+![Restaurant Requests](screenshots/restuarentrequest.jpg)
 
 ---
 
