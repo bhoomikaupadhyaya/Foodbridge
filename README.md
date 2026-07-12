@@ -107,7 +107,7 @@ FoodBridge
 ## Restaurant and NGO Dashboard
 
 ![Dashboard](screenshots/Dashboard.jpg)
-![Dashboard](screenshots/ngodashboard.jpg).
+![Dashboard](screenshots/ngodashboard.jpg)
 ---
 
 ## Add Food
