@@ -11,6 +11,15 @@ FoodBridge is a web-based platform designed to bridge the gap between food donor
 The platform provides secure authentication, role-based access control, real-time request management, and intuitive dashboards for both donors and NGOs.
 
 ---
+---
+
+## 🌐 Live Demo
+
+**Frontend:** https://foodbridge-gold-tau.vercel.app
+
+**Backend API:** https://foodbridge-backend-mbik.onrender.com
+
+---
 
 # 🚀 Features
 
