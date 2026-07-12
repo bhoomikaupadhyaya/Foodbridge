@@ -124,7 +124,7 @@ FoodBridge
 
 ## My Donations
 
-![My Donations](screenshots/my-donations.png)
+![My Donations](screenshots/Mydonations.jpg)
 
 ---
 
@@ -142,7 +142,7 @@ FoodBridge
 
 ## Profile
 
-![Profile](screenshots/profile.png)
+![Profile](screenshots/profile.jpg)
 
 ---
 
