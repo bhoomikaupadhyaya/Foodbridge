@@ -6,9 +6,11 @@ import API from "../../services/api";
 function AddFood() {
   const [food, setFood] = useState({
     foodName: "",
+    description: "",
     quantity: "",
-    location: "",
-    expiry: "",
+    category: "",
+    expiryDate: "",
+    pickupAddress: "",
   });
 
   const handleChange = (e) => {
@@ -22,18 +24,21 @@ function AddFood() {
     e.preventDefault();
 
     try {
-      const response = await API.post("/food", food);
+      const response = await API.post("/food/add", food);
 
       alert(response.data.message);
 
       setFood({
         foodName: "",
+        description: "",
         quantity: "",
-        location: "",
-        expiry: "",
+        category: "",
+        expiryDate: "",
+        pickupAddress: "",
       });
 
     } catch (error) {
+      console.log(error.response?.data);
       alert(error.response?.data?.message || "Failed to add food");
     }
   };
@@ -43,7 +48,6 @@ function AddFood() {
       <Navbar />
 
       <div className="flex bg-gray-100 min-h-screen">
-
         <Sidebar />
 
         <div className="flex-1 p-8">
@@ -54,16 +58,24 @@ function AddFood() {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-xl shadow-lg max-w-xl"
+            className="bg-white p-8 rounded-xl shadow-lg max-w-xl space-y-4"
           >
-
             <input
               type="text"
               name="foodName"
               placeholder="Food Name"
               value={food.foodName}
               onChange={handleChange}
-              className="w-full border p-3 rounded mb-4"
+              className="w-full border p-3 rounded"
+              required
+            />
+
+            <textarea
+              name="description"
+              placeholder="Description"
+              value={food.description}
+              onChange={handleChange}
+              className="w-full border p-3 rounded"
               required
             />
 
@@ -73,26 +85,36 @@ function AddFood() {
               placeholder="Quantity"
               value={food.quantity}
               onChange={handleChange}
-              className="w-full border p-3 rounded mb-4"
+              className="w-full border p-3 rounded"
               required
             />
 
             <input
               type="text"
-              name="location"
-              placeholder="Pickup Location"
-              value={food.location}
+              name="category"
+              placeholder="Category (Veg, Non-Veg, Snacks...)"
+              value={food.category}
               onChange={handleChange}
-              className="w-full border p-3 rounded mb-4"
+              className="w-full border p-3 rounded"
               required
             />
 
             <input
               type="datetime-local"
-              name="expiry"
-              value={food.expiry}
+              name="expiryDate"
+              value={food.expiryDate}
               onChange={handleChange}
-              className="w-full border p-3 rounded mb-6"
+              className="w-full border p-3 rounded"
+              required
+            />
+
+            <input
+              type="text"
+              name="pickupAddress"
+              placeholder="Pickup Address"
+              value={food.pickupAddress}
+              onChange={handleChange}
+              className="w-full border p-3 rounded"
               required
             />
 
@@ -105,7 +127,6 @@ function AddFood() {
           </form>
 
         </div>
-
       </div>
     </>
   );

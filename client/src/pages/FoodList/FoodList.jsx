@@ -13,7 +13,7 @@ function FoodList() {
   const fetchFoods = async () => {
     try {
       const response = await API.get("/food");
-      setFoods(response.data);
+      setFoods(response.data.foods);
     } catch (error) {
       console.error(error);
       alert("Unable to load food donations");
