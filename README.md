@@ -100,7 +100,7 @@ FoodBridge
 
 ## Register
 
-![Register]("C:\Users\HP\Desktop\Projects\foodbridge\screenshots\register.jpg")
+![Register]("/screenshots/register.png")
 
 ---
 
