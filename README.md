@@ -1,196 +1,210 @@
-# 🍱 FoodBridge
+# 🍽️ FoodBridge - Food Donation Platform
 
-> **AI-Powered Surplus Food Redistribution Platform**
-
-FoodBridge is a full-stack web application that helps reduce food waste by connecting restaurants, hotels, event organizers, and individuals with verified NGOs. The platform enables seamless food donation, intelligent donor-recipient matching, and real-time tracking to ensure surplus food reaches people in need.
+> A full-stack MERN application that connects restaurants with NGOs to reduce food waste by enabling seamless food donation and request management.
 
 ---
 
-## 🚀 Features
+## 📌 Overview
 
-### 👤 User Roles
+FoodBridge is a web-based platform designed to bridge the gap between food donors and NGOs. Restaurants can donate surplus food, while NGOs can browse available donations and request food for distribution to those in need.
 
-#### 🍽️ Donor
-- Register and log in securely
-- Create food donation requests
-- Upload food details and images
-- Schedule pickup time
-- Track donation status
-- View donation history
-
-#### 🏢 NGO
-- Browse nearby donation requests
-- Accept or reject donations
-- Manage pickup schedules
-- Update delivery status
-- View completed donations
-
-#### 👨‍💼 Admin
-- Manage users and NGOs
-- Verify NGO registrations
-- Monitor platform activity
-- View donation analytics
-- Manage reports and feedback
+The platform provides secure authentication, role-based access control, real-time request management, and intuitive dashboards for both donors and NGOs.
 
 ---
 
-## 🤖 AI Features
+# 🚀 Features
 
-- 🧠 Smart donor-NGO matching
-- 📍 Location-based donation recommendations
-- 🍛 Food category classification
-- 📊 Donation analytics dashboard
-- 🔔 Intelligent notifications
-- 🌍 Multilingual support (planned)
+## 🔐 Authentication
+- JWT Authentication
+- Secure Login & Registration
+- Password Encryption using bcrypt
+- Role-Based Authorization
+
+## 🍱 Restaurant Features
+- Add Food Donations
+- View My Donations
+- Manage NGO Requests
+- Accept / Reject Requests
+- Dashboard Analytics
+- Profile Management
+
+## 🤝 NGO Features
+- Browse Available Food
+- Request Food Donations
+- Track Request Status
+- Dashboard
+- Profile Management
+
+## 📊 Dashboard
+- Total Donations
+- Available Food
+- Pending Requests
+- Completed Donations
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
-- JavaScript
+## Frontend
 - React.js
-- HTML5
-- CSS3
+- Vite
 - Tailwind CSS
+- React Router DOM
+- Axios
 
-### Backend
+## Backend
 - Node.js
 - Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt.js
 
-### Database
-- Firebase / MongoDB *(Update according to your implementation)*
-
-### Cloud & APIs
-- Google Maps API
-- Firebase Authentication
-- Firebase Storage
-- REST APIs
-
-### Tools
-- Git
-- GitHub
-- VS Code
-- Postman
+## Database
+- MongoDB Atlas
 
 ---
 
-
-
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 FoodBridge
 │
 ├── client
-│   ├── src
 │   ├── components
 │   ├── pages
-│   └── assets
+│   ├── services
+│   ├── context
+│   └── App.jsx
 │
 ├── server
 │   ├── controllers
-│   ├── routes
-│   ├── models
 │   ├── middleware
-│   └── config
+│   ├── models
+│   ├── routes
+│   ├── config
+│   └── server.js
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# 📸 Screenshots
 
-### Clone the repository
+## Login
 
-```bash
-git clone https://github.com/YOUR_USERNAME/FoodBridge.git
-```
-
-### Navigate to the project
-
-```bash
-cd FoodBridge
-```
-
-### Install frontend dependencies
-
-```bash
-cd client
-npm install
-```
-
-### Install backend dependencies
-
-```bash
-cd ../server
-npm install
-```
+![Login](screenshots/login.png)
 
 ---
 
-## ▶️ Run the Application
+## Register
 
-### Start Backend
+![Register](screenshots/register.png)
+
+---
+
+## Restaurant Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## Add Food
+
+![Add Food](screenshots/add-food.png)
+
+---
+
+## Browse Food
+
+![Browse Food](screenshots/browse-food.png)
+
+---
+
+## My Donations
+
+![My Donations](screenshots/my-donations.png)
+
+---
+
+## My Requests
+
+![My Requests](screenshots/my-requests.png)
+
+---
+
+## Restaurant Requests
+
+![Restaurant Requests](screenshots/restaurant-requests.png)
+
+---
+
+## Profile
+
+![Profile](screenshots/profile.png)
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/bhoomikaupadhyaya/Foodbridge.git
+```
+
+### Backend
 
 ```bash
 cd server
-npm start
+npm install
+npm run dev
 ```
 
-### Start Frontend
+### Frontend
 
 ```bash
 cd client
-npm start
+npm install
+npm run dev
 ```
 
-*(If you're using Vite, replace `npm start` with `npm run dev`.)*
+---
+
+# Environment Variables
+
+Create `.env`
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+```
 
 ---
 
-## 🎯 Problem Statement
+# Future Enhancements
 
-Millions of tons of edible food are wasted every year while many people struggle with hunger. FoodBridge addresses this issue by creating an efficient platform that connects food donors with verified NGOs, ensuring surplus food reaches those in need instead of being discarded.
-
----
-
-## 🌟 Future Enhancements
-
-- AI-powered food quality prediction
-- Route optimization for pickups
-- Mobile application
-- QR code-based donation verification
-- Real-time chat
-- Push notifications
-- Carbon footprint analytics
-- Volunteer management system
+- Google Maps Integration
+- Email Notifications
+- Cloudinary Image Upload
+- Admin Dashboard
+- Analytics Charts
+- Real-Time Notifications
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push the branch
-5. Open a Pull Request
-
----
-
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Bhoomika Upadhyaya**
 
-- 💼 Aspiring Software Engineer
-- ☕ Java Developer
-- 🌐 Full-Stack Development Enthusiast
+GitHub:
+https://github.com/bhoomikaupadhyaya
+
+LinkedIn:
+(Add your LinkedIn URL)
 
 ---
 
-## ⭐ Support
-
-If you found this project helpful, please consider giving it a ⭐ on GitHub!
+⭐ If you like this project, consider giving it a star.
