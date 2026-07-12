@@ -1,7 +1,39 @@
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import StatsCard from "../../components/StatsCard/StatsCard";
+import API from "../../services/api";
 
 function Dashboard() {
+  const [stats, setStats] = useState({
+    totalDonations: 0,
+    availableFood: 0,
+    pendingRequests: 0,
+    completedDonations: 0,
+  });
+
+  const role = localStorage.getItem("role");
+
+  useEffect(() => {
+    loadDashboard();
+  }, []);
+
+  const loadDashboard = async () => {
+    try {
+      const res = await API.get("/dashboard");
+
+      setStats({
+        totalDonations: res.data.totalDonations || 0,
+        availableFood: res.data.availableFood || 0,
+        pendingRequests: res.data.pendingRequests || 0,
+        completedDonations: res.data.completedDonations || 0,
+      });
+
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -13,66 +45,58 @@ function Dashboard() {
         <div className="flex-1 p-8">
 
           <h1 className="text-4xl font-bold mb-8">
-            Dashboard
+
+            {role === "donor"
+              ? "Restaurant Dashboard"
+              : "NGO Dashboard"}
+
           </h1>
 
-          {/* Statistics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-gray-500 text-lg">
-                Total Donations
-              </h2>
+            <StatsCard
+              title="Total Donations"
+              value={stats.totalDonations}
+              color="text-green-600"
+              icon="🍱"
+            />
 
-              <p className="text-4xl font-bold text-green-600 mt-3">
-                12
-              </p>
-            </div>
+            <StatsCard
+              title="Available Food"
+              value={stats.availableFood}
+              color="text-blue-600"
+              icon="📦"
+            />
 
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-gray-500 text-lg">
-                Food Requests
-              </h2>
+            <StatsCard
+              title="Pending Requests"
+              value={stats.pendingRequests}
+              color="text-orange-500"
+              icon="🚚"
+            />
 
-              <p className="text-4xl font-bold text-blue-600 mt-3">
-                5
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h2 className="text-gray-500 text-lg">
-                Completed Donations
-              </h2>
-
-              <p className="text-4xl font-bold text-orange-500 mt-3">
-                8
-              </p>
-            </div>
+            <StatsCard
+              title="Completed"
+              value={stats.completedDonations}
+              color="text-purple-600"
+              icon="❤️"
+            />
 
           </div>
 
-          {/* Recent Activity */}
-          <div className="bg-white shadow-lg rounded-xl mt-10 p-6">
+          <div className="bg-white rounded-xl shadow mt-10 p-6">
 
-            <h2 className="text-2xl font-semibold mb-5">
-              Recent Activity
+            <h2 className="text-2xl font-semibold mb-4">
+              Welcome to FoodBridge
             </h2>
 
-            <ul className="space-y-4">
+            <p className="text-gray-600 leading-7">
 
-              <li className="border-b pb-3">
-                🍱 Rice & Curry donated
-              </li>
+              {role === "donor"
+                ? "Manage your food donations, track requests from NGOs, and help reduce food waste."
+                : "Browse available food donations, send collection requests, and manage your requests."}
 
-              <li className="border-b pb-3">
-                🥗 NGO accepted donation
-              </li>
-
-              <li className="border-b pb-3">
-                🚚 Food delivered successfully
-              </li>
-
-            </ul>
+            </p>
 
           </div>
 
