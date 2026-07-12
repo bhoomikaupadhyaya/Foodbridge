@@ -1,4 +1,4 @@
-const Food = require("../models/temfood");
+const Food = require("../models/Food");
 
 // ===============================
 // Add Food Donation
