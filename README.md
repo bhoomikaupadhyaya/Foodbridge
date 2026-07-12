@@ -203,7 +203,7 @@ GitHub:
 https://github.com/bhoomikaupadhyaya
 
 LinkedIn:
-(Add your LinkedIn URL)
+https://www.linkedin.com/in/bhoomika-upadhyaya
 
 ---
 
