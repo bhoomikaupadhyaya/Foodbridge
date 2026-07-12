@@ -10,7 +10,15 @@ const requestRoutes = require("./routes/requestRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://foodbridge-gold-tau.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Routes
