@@ -104,10 +104,10 @@ FoodBridge
 
 ---
 
-## Restaurant Dashboard
+## Restaurant and NGO Dashboard
 
 ![Dashboard](screenshots/Dashboard.jpg)
-
+![Dashboard](screenshots/ngodashboard.jpg).
 ---
 
 ## Add Food
@@ -118,7 +118,7 @@ FoodBridge
 
 ## Browse Food
 
-![Browse Food](screenshots/browse-food.png)
+![Browse Food](screenshots/browsefood.jpg)
 
 ---
 
