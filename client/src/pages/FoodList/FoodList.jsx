@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import FoodCard from "../../components/FoodCard/FoodCard";
 import API from "../../services/api";
 
 function FoodList() {
   const [foods, setFoods] = useState([]);
+  const role = localStorage.getItem("role");
 
   useEffect(() => {
     fetchFoods();
@@ -12,11 +14,24 @@ function FoodList() {
 
   const fetchFoods = async () => {
     try {
-      const response = await API.get("/food");
-      setFoods(response.data.foods);
-    } catch (error) {
-      console.error(error);
-      alert("Unable to load food donations");
+      const res = await API.get("/food");
+      setFoods(res.data.foods || []);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const requestFood = async (foodId) => {
+    try {
+      await API.post("/request", {
+        foodId,
+      });
+
+      alert("Food request sent successfully.");
+
+      fetchFoods();
+    } catch (err) {
+      alert(err.response?.data?.message || "Unable to send request.");
     }
   };
 
@@ -31,7 +46,7 @@ function FoodList() {
         <div className="flex-1 p-8">
 
           <h1 className="text-3xl font-bold mb-8">
-            Available Food Donations
+            Available Food
           </h1>
 
           {foods.length === 0 ? (
@@ -39,37 +54,15 @@ function FoodList() {
               No food donations available.
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
               {foods.map((food) => (
-
-                <div
+                <FoodCard
                   key={food._id}
-                  className="bg-white rounded-xl shadow-lg p-6"
-                >
-                  <h2 className="text-xl font-bold text-green-600">
-                    {food.foodName}
-                  </h2>
-
-                  <p className="mt-3">
-                    <strong>Quantity:</strong> {food.quantity}
-                  </p>
-
-                  <p>
-                    <strong>Location:</strong> {food.location}
-                  </p>
-
-                  <p>
-                    <strong>Expiry:</strong>{" "}
-                    {new Date(food.expiry).toLocaleString()}
-                  </p>
-
-                  <p className="mt-3 text-sm text-gray-500">
-                    Status: {food.status}
-                  </p>
-
-                </div>
-
+                  food={food}
+                  role={role}
+                  onRequest={requestFood}
+                />
               ))}
 
             </div>
