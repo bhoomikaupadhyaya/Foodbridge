@@ -9,7 +9,7 @@ function FoodList() {
   const role = localStorage.getItem("role");
 
   useEffect(() => {
-    fetchFoods();
+  fetchFoods();
   }, []);
 
   const fetchFoods = async () => {
