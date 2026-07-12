@@ -94,13 +94,13 @@ FoodBridge
 
 ## Login
 
-![Login](login.png)
+![Login]("screenshots/login.jpg")
 
 ---
 
 ## Register
 
-![Register]("/screenshots/register.png")
+![Register]("screenshots/register.png")
 
 ---
 
