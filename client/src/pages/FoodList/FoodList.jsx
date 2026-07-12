@@ -21,19 +21,17 @@ function FoodList() {
     }
   };
 
-  const requestFood = async (foodId) => {
-    try {
-      await API.post("/request", {
-        foodId,
-      });
+const requestFood = async (foodId) => {
+  try {
+    const res = await API.post(`/request/${foodId}`);
 
-      alert("Food request sent successfully.");
+    alert(res.data.message);
 
-      fetchFoods();
-    } catch (err) {
-      alert(err.response?.data?.message || "Unable to send request.");
-    }
-  };
+    fetchFoods();
+  } catch (err) {
+    alert(err.response?.data?.message || "Unable to send request");
+  }
+};
 
   return (
     <>
