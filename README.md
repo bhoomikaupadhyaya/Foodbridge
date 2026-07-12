@@ -94,7 +94,7 @@ FoodBridge
 
 ## Login
 
-![Login](screenshots/login.png)
+![Login](login.png)
 
 ---
 
