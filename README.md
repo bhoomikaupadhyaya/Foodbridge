@@ -94,25 +94,25 @@ FoodBridge
 
 ## Login
 
-![Login]("screenshots/login.jpg")
+![Login](screenshots/login.jpg)
 
 ---
 
 ## Register
 
-![Register]("screenshots/register.png")
+![Register](screenshots/register.jpg)
 
 ---
 
 ## Restaurant Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.jpg)
 
 ---
 
 ## Add Food
 
-![Add Food](screenshots/add-food.png)
+![Add Food](screenshots/addfood.jpg)
 
 ---
 
