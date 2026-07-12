@@ -27,16 +27,23 @@ function Navbar() {
           </Link>
 
           {role === "donor" && (
-            <>
-              <Link to="/add-food" className="hover:text-gray-200">
-                Add Food
-              </Link>
+  <>
+    <Link to="/add-food" className="hover:text-gray-200">
+      Add Food
+    </Link>
 
-              <Link to="/my-donations" className="hover:text-gray-200">
-                My Donations
-              </Link>
-            </>
-          )}
+    <Link to="/my-donations" className="hover:text-gray-200">
+      My Donations
+    </Link>
+
+    <Link
+      to="/restaurant-requests"
+      className="hover:text-gray-200"
+    >
+      Food Requests
+    </Link>
+  </>
+)}
 
           {role === "ngo" && (
             <>

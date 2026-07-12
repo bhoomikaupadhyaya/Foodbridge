@@ -22,23 +22,29 @@ function Sidebar() {
           </Link>
 
           {role === "donor" && (
-            <>
-              <Link
-                to="/add-food"
-                className="block p-3 rounded-lg hover:bg-green-100"
-              >
-                🍱 Add Food
-              </Link>
+  <>
+    <Link
+      to="/add-food"
+      className="block p-3 rounded-lg hover:bg-green-100"
+    >
+      🍱 Add Food
+    </Link>
 
-              <Link
-                to="/my-donations"
-                className="block p-3 rounded-lg hover:bg-green-100"
-              >
-                ❤️ My Donations
-              </Link>
-            </>
-          )}
+    <Link
+      to="/my-donations"
+      className="block p-3 rounded-lg hover:bg-green-100"
+    >
+      ❤️ My Donations
+    </Link>
 
+    <Link
+      to="/restaurant-requests"
+      className="block p-3 rounded-lg hover:bg-green-100"
+    >
+      📥 Food Requests
+    </Link>
+  </>
+)}
           {role === "ngo" && (
             <>
               <Link
@@ -63,6 +69,7 @@ function Sidebar() {
           >
             👤 Profile
           </Link>
+          
 
         </nav>
 

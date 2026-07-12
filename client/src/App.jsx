@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import AddFood from "./pages/AddFood/AddFood";
 import FoodList from "./pages/FoodList/FoodList";
 import MyDonations from "./pages/MyDonations/MyDonations";
+import MyRequests from "./pages/MyRequests/MyRequests";
+import RestaurantRequests from "./pages/RestaurantRequests/RestaurantRequests";
 import Profile from "./pages/Profile/Profile";
 import NotFound from "./pages/NotFound/NotFound";
 
@@ -32,16 +34,6 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Common */}
-      <Route
-        path="/profile"
-        element={
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        }
-      />
-
       {/* Dashboard */}
       <Route
         path="/dashboard"
@@ -52,7 +44,7 @@ function App() {
         }
       />
 
-      {/* Donor Only */}
+      {/* Donor Routes */}
       <Route
         path="/add-food"
         element={
@@ -71,12 +63,40 @@ function App() {
         }
       />
 
-      {/* NGO */}
+      <Route
+        path="/restaurant-requests"
+        element={
+          <ProtectedRoute allowedRole="donor">
+            <RestaurantRequests />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* NGO Routes */}
       <Route
         path="/food-list"
         element={
-          <ProtectedRoute>
+          <ProtectedRoute allowedRole="ngo">
             <FoodList />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/my-requests"
+        element={
+          <ProtectedRoute allowedRole="ngo">
+            <MyRequests />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Common Routes */}
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
           </ProtectedRoute>
         }
       />
