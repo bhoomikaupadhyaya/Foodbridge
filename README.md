@@ -94,55 +94,55 @@ FoodBridge
 
 ## Login
 
-![Login]("screenshots/login.jpg")
+![Login](screenshots/login.jpg)
 
 ---
 
 ## Register
 
-![Register]("screenshots/register.png")
+![Register](screenshots/register.jpg)
 
 ---
 
-## Restaurant Dashboard
+## Restaurant and NGO Dashboard
 
-![Dashboard](screenshots/dashboard.png)
-
+![Dashboard](screenshots/Dashboard.jpg)
+![Dashboard](screenshots/ngodashboard.jpg).
 ---
 
 ## Add Food
 
-![Add Food](screenshots/add-food.png)
+![Add Food](screenshots/addfood.jpg)
 
 ---
 
 ## Browse Food
 
-![Browse Food](screenshots/browse-food.png)
+![Browse Food](screenshots/browsefood.jpg)
 
 ---
 
 ## My Donations
 
-![My Donations](screenshots/my-donations.png)
+![My Donations](screenshots/Mydonations.jpg)
 
 ---
 
 ## My Requests
 
-![My Requests](screenshots/my-requests.png)
+![My Requests](screenshots/myrequests.jpg)
 
 ---
 
 ## Restaurant Requests
 
-![Restaurant Requests](screenshots/restaurant-requests.png)
+![Restaurant Requests](screenshots/restuarentrequest.jpg)
 
 ---
 
 ## Profile
 
-![Profile](screenshots/profile.png)
+![Profile](screenshots/profile.jpg)
 
 ---
 
