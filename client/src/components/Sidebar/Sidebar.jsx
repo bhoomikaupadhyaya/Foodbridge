@@ -1,62 +1,74 @@
 import { Link } from "react-router-dom";
 
 function Sidebar() {
+  const role = localStorage.getItem("role");
+
   return (
-    <div className="w-64 bg-white shadow-lg h-screen p-5">
+    <aside className="w-64 min-h-screen bg-white shadow-lg">
 
-      <h2 className="text-2xl font-bold text-green-600 mb-8">
-        FoodBridge
-      </h2>
+      <div className="p-6">
 
-      <ul className="space-y-4">
+        <h2 className="text-2xl font-bold text-green-600 mb-8">
+          FoodBridge
+        </h2>
 
-        <li>
+        <nav className="space-y-3">
+
           <Link
             to="/dashboard"
-            className="block p-3 rounded hover:bg-green-100"
+            className="block p-3 rounded-lg hover:bg-green-100"
           >
             🏠 Dashboard
           </Link>
-        </li>
 
-        <li>
-          <Link
-            to="/add-food"
-            className="block p-3 rounded hover:bg-green-100"
-          >
-            🍱 Add Food
-          </Link>
-        </li>
+          {role === "donor" && (
+            <>
+              <Link
+                to="/add-food"
+                className="block p-3 rounded-lg hover:bg-green-100"
+              >
+                🍱 Add Food
+              </Link>
 
-        <li>
-          <Link
-            to="/food-list"
-            className="block p-3 rounded hover:bg-green-100"
-          >
-            📋 Food List
-          </Link>
-        </li>
+              <Link
+                to="/my-donations"
+                className="block p-3 rounded-lg hover:bg-green-100"
+              >
+                ❤️ My Donations
+              </Link>
+            </>
+          )}
 
-        <li>
-          <Link
-            to="/my-donations"
-            className="block p-3 rounded hover:bg-green-100"
-          >
-            ❤️ My Donations
-          </Link>
-        </li>
+          {role === "ngo" && (
+            <>
+              <Link
+                to="/food-list"
+                className="block p-3 rounded-lg hover:bg-green-100"
+              >
+                📋 Browse Food
+              </Link>
 
-        <li>
+              <Link
+                to="/my-requests"
+                className="block p-3 rounded-lg hover:bg-green-100"
+              >
+                📦 My Requests
+              </Link>
+            </>
+          )}
+
           <Link
             to="/profile"
-            className="block p-3 rounded hover:bg-green-100"
+            className="block p-3 rounded-lg hover:bg-green-100"
           >
             👤 Profile
           </Link>
-        </li>
 
-      </ul>
-    </div>
+        </nav>
+
+      </div>
+
+    </aside>
   );
 }
 
